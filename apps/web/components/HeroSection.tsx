@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <div className="flex justify-center items-start pt-[8rem] pb-[3rem] h-auto 2xl:h-[100vh]">
-      <div className="relative flex flex-col max-w-[1440px] grow px-[1rem]">
+    <div className="flex justify-center items-center pt-[8rem] pb-[5rem] h-auto">
+      <div className="relative flex flex-col max-w-[1440px] grow px-[1rem] ">
         <div className="flex flex-col gap-8 max-w-[850px]">
           <h1 className="font-[satoshi] text-4xl lg:text-6xl font-bold  text-white tracking-wide">
             Blockchain&#39;s first
@@ -25,9 +25,9 @@ const HeroSection = () => {
             </button>
           </div>
         </div>
-        <div className="relative 2xl:absolute 2xl:top-[30%] 2xl:left-1/2 2xl:transform 2xl:-translate-x-1/2 flex justify-center items-center mt-5 w-full max-w-[80rem] -z-[1] 2xl:w-[80rem]">
+        <div className="flex items-start justify-center py-2">
           <Image
-            src={"/assets/hero/overall-illustration.webp"}
+            src={"/assets/hero/overall-illustration-v2.webp"}
             alt={"overall"}
             height={1000}
             width={1600}

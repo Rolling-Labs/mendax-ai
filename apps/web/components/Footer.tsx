@@ -42,7 +42,7 @@ const Footer = () => {
         {socmed.map((data, index) => {
           return (
             <Link
-              href={data.imgUrl}
+              href={data.linkUrl}
               key={index}
               target="_blank"
               className="hover:scale-125 duration-150"
