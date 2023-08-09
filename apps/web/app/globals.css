@@ -17,11 +17,15 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+  /* background-color: #0b1113;
+  background-image: url(../public/assets/bg/background.webp);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; */
+}
+
+@font-face {
+  font-family: satoshi;
+  src: url(../fonts/Satoshi-Variable.ttf);
 }
