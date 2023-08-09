@@ -2,12 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/solid";
 import Logo from "public/icons/logo.svg";
+import { useScrollPosition } from "@/hooks/useScrollPosition";
 
 const Header = () => {
   const [nav, setNav] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const hide = "hidden";
   const show = "auto";
+  const scrollPosition = useScrollPosition();
 
   useEffect(() => {
     nav
@@ -21,7 +23,13 @@ const Header = () => {
 
   return (
     <>
-      <div className="fixed top-0 flex justify-between items-center w-full z-[999] py-8 px-[1rem] lg:px-16">
+      <div
+        className={`fixed duration-300 top-0 flex justify-between items-center w-full z-[999]  px-[1rem] lg:px-16 backdrop-blur-md ${
+          scrollPosition > 50
+            ? "bg-black/10 drop-shadow-md py-4"
+            : "bg-transparent py-8"
+        }`}
+      >
         <Logo className="w-[6rem]" />
         <div className="flex items-center justify-center gap-4">
           <button
