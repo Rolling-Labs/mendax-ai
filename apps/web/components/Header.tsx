@@ -92,7 +92,10 @@ const Header = () => {
               Sign up now
             </Button>
           </div>
-          <div className="w-full max-w-[20px]" onClick={() => setNav(!nav)}>
+          <div
+            className="w-full max-w-[20px] hidden lg:flex"
+            onClick={() => setNav(!nav)}
+          >
             {!nav ? (
               <MenuIcon className="text-[#FAF9F5] duration-300" />
             ) : (
