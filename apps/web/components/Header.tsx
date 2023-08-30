@@ -93,7 +93,7 @@ const Header = () => {
             </Button>
           </div>
           <div
-            className="w-full max-w-[20px] flex lg:hidden"
+            className="w-full max-w-[20px] flex lg:hidden "
             onClick={() => setNav(!nav)}
           >
             {!nav ? (
