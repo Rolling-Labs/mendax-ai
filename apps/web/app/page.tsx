@@ -1,18 +1,18 @@
+import CustomizeEverything from "@/components/CustomizeEverything";
 import DualTokenEconomy from "@/components/DualTokenEconomy";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import Partner from "@/components/Partner";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      {/* <div className="fixed inset-0 bg-[#0b1013] -z-[2] h-full" />
-      <div className="fixed inset-0 flex justify-center items-center bg-[url('/assets/bg/background.webp')] opacity-20 bg-cover bg-left-top bg-fixed -z-[1]" /> */}
-      {/* <Header /> */}
       <HeroSection />
+      <CustomizeEverything />
       <DualTokenEconomy />
-      {/* <Footer /> */}
+      <Partner />
     </>
   );
 }
