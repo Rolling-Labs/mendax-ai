@@ -53,7 +53,7 @@ const characterhead = [
 const CustomizeEverything = () => {
   return (
     <div className="relative flex justify-center items-center h-auto pt-[8rem] bg-[url('/assets/bg/bg.png')] bg-no-repeat bg-cover bg-center">
-      <div className="flex flex-col gap-16 max-w-[1440px] grow px-[1rem] lg:px-0">
+      <div className="flex flex-col gap-16 max-w-[1440px] grow px-[1rem] ">
         <div className="flex flex-col gap-8">
           <h1 className="font-[satoshi] text-2xl lg:text-5xl font-bold">
             <span className="text-white">Customize </span>

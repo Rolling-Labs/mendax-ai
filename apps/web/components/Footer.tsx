@@ -36,7 +36,7 @@ const socmed = [
 const Footer = () => {
   return (
     <div className="flex justify-center items-center py-4">
-      <div className="flex flex-col md:flex-row justify-between items-center max-w-[1440px] gap-2 grow">
+      <div className="flex flex-col md:flex-row justify-between items-center max-w-[1440px] gap-2 grow px-[1rem]">
         <div className="flex flex-col gap-4">
           <Logo className="w-[6rem]" />
           <h1 className="text-[#FAF9F5] text-base font-[satoshi]">

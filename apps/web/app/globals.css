@@ -77,3 +77,11 @@ body {
   height: 100%;
   object-fit: contain;
 }
+
+.swiper-pagination-bullet {
+  background-color: #ffffff !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ea2899 !important;
+}

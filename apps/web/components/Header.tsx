@@ -45,97 +45,102 @@ const Header = () => {
   return (
     <>
       <div
-        className={`fixed duration-300 top-0 flex justify-between items-center w-full z-[9999999999999999]  px-[1rem] lg:px-16 backdrop-blur-md ${
-          scrollPosition > 50
-            ? "bg-black/10 drop-shadow-md py-4"
+        className={`fixed duration-300 top-0 flex justify-center items-center w-full  z-[9999999999999999]  backdrop-blur-md 
+        ${
+          !nav
+            ? `${
+                scrollPosition > 50
+                  ? "bg-black/10 drop-shadow-md py-4"
+                  : "bg-transparent py-8"
+              }`
             : "bg-transparent py-8"
-        }`}
+        }
+        `}
       >
-        <div className="flex flex-row justify-center items-center gap-8">
-          <Logo className="w-[6rem]" />
-          {navigations.map((data, index) => {
-            return (
-              <a
-                key={index}
-                href={data.linkUrl}
-                className={`
+        <div className="flex justify-between items-center max-w-[1440px] w-full px-[1rem]">
+          <div className="flex flex-row justify-center items-center gap-8 ">
+            <Logo className="w-[6rem]" />
+            {navigations.map((data, index) => {
+              return (
+                <a
+                  key={index}
+                  href={data.linkUrl}
+                  className={`
                 ${
                   pathname === data.linkUrl
                     ? "text-[#FAF9F5]"
                     : "text-[#FAF9F5]/50"
                 } font-[satoshi] text-base hover:text-[#FAF9F5] hidden lg:flex`}
-              >
-                {data.name}
-              </a>
-            );
-          })}
-        </div>
+                >
+                  {data.name}
+                </a>
+              );
+            })}
+          </div>
 
-        <div className="hidden lg:flex items-center justify-center gap-4">
-          <Button
-            className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100  text-[#FAF9F5] rounded-full
+          <div className="hidden lg:flex items-center justify-center gap-4">
+            <Button
+              className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100  text-[#FAF9F5] rounded-full
             hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
-          >
-            Login
-          </Button>
-          <Button
-            className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100 bg-gradient-to-l from-[#3c29f7] to-[#ef2897] hover:from-[#ef2897] text-[#FAF9F5] rounded-full
+            >
+              Login
+            </Button>
+            <Button
+              className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100 bg-gradient-to-l from-[#3c29f7] to-[#ef2897] hover:from-[#ef2897] text-[#FAF9F5] rounded-full
             hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
-          >
-            Sign up now
-          </Button>
+            >
+              Sign up now
+            </Button>
+          </div>
+          <div className="w-full max-w-[20px]" onClick={() => setNav(!nav)}>
+            {!nav ? (
+              <MenuIcon className="text-[#FAF9F5] duration-300" />
+            ) : (
+              <XIcon className="text-[#FAF9F5] duration-300" />
+            )}
+          </div>
         </div>
-        <div
-          className="w-full max-w-[2rem] z-[3] duration-300 inline-block md:hidden"
-          onClick={() => setNav(!nav)}
-        >
-          {!nav ? (
-            <MenuIcon className="text-[#FAF9F5] duration-300" />
-          ) : (
-            <XIcon className="text-[#FAF9F5] duration-300" />
-          )}
-        </div>
-        <div
-          className={`duration-300 backdrop-blur-sm ${
-            !nav
-              ? "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#0b1013] -z-[2] translate-x-full"
-              : "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#0b1013] z-[2]"
-          }`}
-        >
-          <div className="flex flex-col items-center justify-center gap-4 px-5">
-            <div className="flex flex-col justify-center items-center gap-8">
-              <Logo className="w-[6rem]" />
-              {navigations.map((data, index) => {
-                return (
-                  <a
-                    key={index}
-                    href={data.linkUrl}
-                    className={`
+      </div>
+
+      <div
+        className={`duration-300 backdrop-blur-sm ${
+          !nav
+            ? "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#0b1013] -z-[2] translate-x-full"
+            : "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#0b1013] z-[999999999]"
+        }`}
+      >
+        <div className="flex flex-col items-center justify-center gap-4 px-5">
+          <div className="flex flex-col justify-center items-center gap-8">
+            {navigations.map((data, index) => {
+              return (
+                <a
+                  key={index}
+                  href={data.linkUrl}
+                  className={`
                 ${
                   pathname === data.linkUrl
                     ? "text-[#FAF9F5]"
                     : "text-[#FAF9F5]/50"
                 } font-[satoshi] text-base hover:text-[#FAF9F5] `}
-                  >
-                    {data.name}
-                  </a>
-                );
-              })}
-            </div>
-            <div className="flex flex-col items-center justify-center gap-4">
-              <Button
-                className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100  text-[#FAF9F5] rounded-full
+                >
+                  {data.name}
+                </a>
+              );
+            })}
+          </div>
+          <div className="flex flex-col items-center justify-center gap-4">
+            <Button
+              className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100  text-[#FAF9F5] rounded-full
             hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
-              >
-                Login
-              </Button>
-              <Button
-                className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100 bg-gradient-to-l from-[#3c29f7] to-[#ef2897] hover:from-[#ef2897] text-[#FAF9F5] rounded-full
+            >
+              Login
+            </Button>
+            <Button
+              className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100 bg-gradient-to-l from-[#3c29f7] to-[#ef2897] hover:from-[#ef2897] text-[#FAF9F5] rounded-full
             hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
-              >
-                Sign up now
-              </Button>
-            </div>
+            >
+              Sign up now
+            </Button>
           </div>
         </div>
       </div>
