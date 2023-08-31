@@ -92,8 +92,8 @@ const Header = () => {
               Sign up now
             </Button>
           </div>
-          <div
-            className="w-full max-w-[20px] flex lg:hidden "
+          {/* <div
+            className="w-full max-w-[20px] flex lg:hidden"
             onClick={() => setNav(!nav)}
           >
             {!nav ? (
@@ -101,7 +101,25 @@ const Header = () => {
             ) : (
               <XIcon className="text-[#FAF9F5] duration-300" />
             )}
-          </div>
+          </div> */}
+        </div>
+      </div>
+
+      <div
+        className={`fixed duration-300 ${
+          scrollPosition > 50 ? "top-0" : "top-5"
+        } right-0
+         pr-[1rem] p-5 flex flex-row justify-end lg:hidden z-[99999999999]`}
+      >
+        <div
+          className="w-full max-w-[2rem] z-[3] duration-300 inline-block lg:hidden"
+          onClick={() => setNav(!nav)}
+        >
+          {!nav ? (
+            <MenuIcon className={`text-white duration-300 w-[2rem]`} />
+          ) : (
+            <XIcon className="text-white duration-300 w-[2rem]" />
+          )}
         </div>
       </div>
 
