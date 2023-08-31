@@ -70,21 +70,22 @@ const CustomizeEverything = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-16">
-          <div className="flex flex-col max-w-[190px] sm:max-w-max sm:flex-row lg:flex-col gap-4 w-full lg:max-w-[190px]">
+        <div className="flex flex-col items-center 2xl:flex-row gap-16">
+          <div className="flex flex-col justify-center items-center 2xl:items-start 2xl:justify-start sm:flex-row 2xl:flex-col gap-4 ">
             {metadata.map((data, index) => {
               return (
-                <Button
-                  key={index}
-                  disabled={!data.isLive}
-                  className={`p-4 font-[satoshi] text-base uppercase text-left rounded-full focus-visible:outline-none ${
-                    !data.isLive
-                      ? "font-bold text-white/50"
-                      : "font-black text-white bg-gradient-to-r from-[#7e1d57] to-[#301e8c]"
-                  }`}
-                >
-                  {data.name}
-                </Button>
+                <div key={index}>
+                  <Button
+                    disabled={!data.isLive}
+                    className={`p-4 font-[satoshi] text-xs sm:text-base uppercase text-left rounded-full focus-visible:outline-none ${
+                      !data.isLive
+                        ? "font-bold text-white/50"
+                        : "font-black text-white bg-gradient-to-r from-[#7e1d57] to-[#301e8c]"
+                    }`}
+                  >
+                    {data.name}
+                  </Button>
+                </div>
               );
             })}
           </div>
@@ -115,7 +116,7 @@ const CustomizeEverything = () => {
                     alt={data.name}
                     height={300}
                     width={300}
-                    className="w-full max-w-[300px] scale-75 p-4 duration-300"
+                    className="w-full max-w-[300px] scale-100 lg:scale-75 p-4 duration-300"
                   />
                   <h1 className="text-white absolute top-[3.5rem] right-[3.5rem] rounded-full bg-[#d829a5] blur-2xl max-w-[200px] max-h-[200px] h-full w-full -z-[1] duration-300 opacity-0 lg:group-hover:opacity-40">
                     a
