@@ -9,7 +9,7 @@ const poweredby = [
   },
   {
     name: "lua",
-    imgUrl: "/assets/partners/powered/image-5.png",
+    imgUrl: "/assets/partners/powered/lua-white.png",
   },
   {
     name: "aws",
