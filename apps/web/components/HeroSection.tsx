@@ -43,7 +43,7 @@ const HeroSection = () => {
           </span>
           <span className="text-[#FAF9F5]">platform</span>
         </h1>
-        <h1 className="text-[#FAF9F5] absolute top-[20%] left-1/2 transform -translate-x-1/2 -translate-y-[20%] font-[satoshi] text-base font-medium text-center hidden lg:flex">
+        <h1 className="text-[#FAF9F5] absolute top-[21%] left-1/2 transform -translate-x-1/2 -translate-y-[21%] font-[satoshi] text-base font-medium text-center hidden lg:flex">
           Unleash Your Gaming Vision: Create, Innovate, Dominate!
         </h1>
       </div>

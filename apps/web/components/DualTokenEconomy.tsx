@@ -28,7 +28,7 @@ const DualTokenEconomy = () => {
         <p className="text-center  flex flex-wrap justify-center items-center gap-1 text-base">
           <span className="text-[#FAF9F5]/50">Mendax Credits (MC)</span>
           <span className="text-[#FAF9F5]/50">
-            is an on-chain token and can be used to purchase assets in the
+            Is an on-chain token and can be used to purchase assets in the
             Mendax Marketplace to build your game. Winning in the game is
             translated into Earning MC. Build games and get paid in MC when
             other users play your game. You need MC for building your games with
@@ -38,7 +38,7 @@ const DualTokenEconomy = () => {
           <br></br>
           <span className="text-[#FAF9F5]">Mendax Points (MP)</span>
           <span className="text-[#FAF9F5]/50">
-            are used to buy avatar Accessories and cosmetics such as Skins or
+            Are used to buy avatar Accessories and cosmetics such as Skins or
             other in-game complements.
           </span>
         </p>

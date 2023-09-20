@@ -3,10 +3,35 @@ import React, { useEffect, useState } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/solid";
 import Logo from "public/icons/logo.svg";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
+import { Button } from "@nextui-org/react";
+import { usePathname } from "next/navigation";
+
+const navigations = [
+  {
+    name: "Home",
+    linkUrl: "/",
+  },
+  {
+    name: "Games",
+    linkUrl: "/#games",
+  },
+  {
+    name: "Marketplace",
+    linkUrl: "/#marketplace",
+  },
+  {
+    name: "Studio",
+    linkUrl: "/#studio",
+  },
+  {
+    name: "About",
+    linkUrl: "/#about",
+  },
+];
 
 const Header = () => {
+  const pathname = usePathname();
   const [nav, setNav] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   const hide = "hidden";
   const show = "auto";
   const scrollPosition = useScrollPosition();
@@ -15,85 +40,128 @@ const Header = () => {
     nav
       ? (document.body.style.overflowY = hide)
       : (document.body.style.overflowY = show);
-
-    showModal
-      ? (document.body.style.overflowY = hide)
-      : (document.body.style.overflowY = show);
-  }, [nav, showModal]);
+  }, [nav]);
 
   return (
     <>
       <div
-        className={`fixed duration-300 top-0 flex justify-between items-center w-full z-[999]  px-[1rem] lg:px-16 backdrop-blur-md ${
-          scrollPosition > 50
-            ? "bg-black/10 drop-shadow-md py-4"
+        className={`fixed duration-300 top-0 flex justify-center items-center w-full  z-[9999999999999999]  backdrop-blur-md 
+        ${
+          !nav
+            ? `${
+                scrollPosition > 50
+                  ? "bg-black/10 drop-shadow-md py-4"
+                  : "bg-transparent py-8"
+              }`
             : "bg-transparent py-8"
-        }`}
+        }
+        `}
       >
-        <Logo className="w-[6rem]" />
-        <div className="flex items-center justify-center gap-4">
-          <button
-            onClick={() => setShowModal(!showModal)}
-            className="px-8 py-4 uppercase rounded-full bg-[#FAF9F514]/20 backdrop-blur-[8px] text-white font-[satoshi] hover:scale-105 duration-150 hidden md:inline-block"
+        <div className="flex justify-between items-center max-w-[1440px] w-full px-[1rem]">
+          <div className="flex flex-row justify-center items-center gap-8 ">
+            <Logo className="w-[6rem]" />
+            {navigations.map((data, index) => {
+              return (
+                <a
+                  key={index}
+                  href={data.linkUrl}
+                  className={`
+                ${
+                  pathname === data.linkUrl
+                    ? "text-[#FAF9F5]"
+                    : "text-[#FAF9F5]/50"
+                } font-[satoshi] text-base hover:text-[#FAF9F5] hidden lg:flex`}
+                >
+                  {data.name}
+                </a>
+              );
+            })}
+          </div>
+
+          <div className="hidden lg:flex items-center justify-center gap-4">
+            <Button
+              className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100  text-[#FAF9F5] rounded-full
+            hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
+            >
+              Login
+            </Button>
+            <Button
+              className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100 bg-gradient-to-l from-[#3c29f7] to-[#ef2897] hover:from-[#ef2897] text-[#FAF9F5] rounded-full
+            hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
+            >
+              Sign up now
+            </Button>
+          </div>
+          {/* <div
+            className="w-full max-w-[20px] flex lg:hidden"
+            onClick={() => setNav(!nav)}
           >
-            Login
-          </button>
-          <button
-            onClick={() => setShowModal(!showModal)}
-            className="px-8 py-4 uppercase rounded-full bg-[#FAF9F514]/20 backdrop-blur-[8px] text-white font-[satoshi] hover:scale-105 duration-150 hidden md:inline-block"
-          >
-            Sign Up
-          </button>
+            {!nav ? (
+              <MenuIcon className="text-[#FAF9F5] duration-300" />
+            ) : (
+              <XIcon className="text-[#FAF9F5] duration-300" />
+            )}
+          </div> */}
         </div>
+      </div>
+
+      <div
+        className={`fixed duration-300 ${
+          scrollPosition > 50 ? "top-0" : "top-5"
+        } right-0
+         pr-[1rem] p-5 flex flex-row justify-end lg:hidden z-[99999999999]`}
+      >
         <div
-          className="w-full max-w-[2rem] z-[3] duration-300 inline-block md:hidden"
+          className="w-full max-w-[2rem] z-[3] duration-300 inline-block lg:hidden"
           onClick={() => setNav(!nav)}
         >
           {!nav ? (
-            <MenuIcon className="text-white duration-300" />
+            <MenuIcon className={`text-white duration-300 w-[2rem]`} />
           ) : (
-            <XIcon className="text-white duration-300" />
+            <XIcon className="text-white duration-300 w-[2rem]" />
           )}
         </div>
-        <div
-          className={`duration-300 backdrop-blur-sm ${
-            !nav
-              ? "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#FAF9F514] -z-[2] translate-x-full"
-              : "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#FAF9F514] z-[2]"
-          }`}
-        >
-          <div className="flex flex-col items-center justify-center gap-4 px-5">
-            <Logo className="w-full md:w-96 inline-block mb-5" />
-            <button
-              onClick={() => setShowModal(!showModal)}
-              className="px-8 py-4 uppercase rounded-full bg-[#FAF9F514]/20 backdrop-blur-[8px] text-white font-[satoshi] hover:scale-105 duration-150 inline-block"
+      </div>
+
+      <div
+        className={`duration-300 backdrop-blur-sm ${
+          !nav
+            ? "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#0b1013] -z-[2] translate-x-full"
+            : "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#0b1013] z-[999999999]"
+        }`}
+      >
+        <div className="flex flex-col items-center justify-center gap-4 px-5">
+          <div className="flex flex-col justify-center items-center gap-8">
+            {navigations.map((data, index) => {
+              return (
+                <a
+                  key={index}
+                  href={data.linkUrl}
+                  className={`
+                ${
+                  pathname === data.linkUrl
+                    ? "text-[#FAF9F5]"
+                    : "text-[#FAF9F5]/50"
+                } font-[satoshi] text-base hover:text-[#FAF9F5] `}
+                >
+                  {data.name}
+                </a>
+              );
+            })}
+          </div>
+          <div className="flex flex-col items-center justify-center gap-4">
+            <Button
+              className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100  text-[#FAF9F5] rounded-full
+            hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
             >
               Login
-            </button>
-            <button
-              onClick={() => setShowModal(!showModal)}
-              className="px-8 py-4 uppercase rounded-full bg-[#FAF9F514]/20 backdrop-blur-[8px] text-white font-[satoshi] hover:scale-105 duration-150 inline-block"
+            </Button>
+            <Button
+              className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100 bg-gradient-to-l from-[#3c29f7] to-[#ef2897] hover:from-[#ef2897] text-[#FAF9F5] rounded-full
+            hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
             >
-              Sign Up
-            </button>
-          </div>
-        </div>
-
-        <div
-          className={`duration-300 backdrop-blur-sm ${
-            !showModal
-              ? "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#FAF9F514] -z-[2] translate-x-full"
-              : "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#FAF9F514] z-[2]"
-          }`}
-        >
-          <XIcon
-            onClick={() => setShowModal(false)}
-            className={`absolute top-10 right-10 text-white duration-300 w-10 cursor-pointer`}
-          />
-          <div className=" p-6 rounded-lg">
-            <h1 className="font-[satoshi] text-4xl font-bold  text-white tracking-wide">
-              Coming Soon...
-            </h1>
+              Sign up now
+            </Button>
           </div>
         </div>
       </div>
