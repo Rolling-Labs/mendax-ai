@@ -17,7 +17,14 @@ const HeroSection = () => {
         height={1400}
         className="absolute left-1/2 transform -translate-x-1/2 bottom-[2rem] sm:bottom-[4rem] w-full max-h-[1200px] max-w-[1440px] -z-[2]"
       />
-      <HeroCharacter className="absolute left-1/2 transform -translate-x-1/2 bottom-[2rem] sm:bottom-[4rem] w-full max-h-[870px]" />
+      <Image
+        src={"/assets/hero/hero-character.png"}
+        alt={"aura"}
+        width={2000}
+        height={2000}
+        className="absolute left-1/2 transform -translate-x-1/2 bottom-[3rem] sm:bottom-[4rem] w-full max-h-[850px]"
+      />
+      {/* <HeroCharacter className="absolute left-1/2 transform -translate-x-1/2 bottom-[2rem] sm:bottom-[4rem] w-full max-h-[870px]" /> */}
       <Button
         // onClick={() => setShowModal(true)}
         className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100 bg-gradient-to-l from-[#3c29f7] to-[#ef2897] hover:from-[#ef2897] text-[#FAF9F5] rounded-full
