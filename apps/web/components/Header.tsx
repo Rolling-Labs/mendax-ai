@@ -45,7 +45,7 @@ const Header = () => {
   return (
     <>
       <div
-        className={`fixed duration-300 top-0 flex justify-center items-center w-full  z-[9999999999999999]  backdrop-blur-md 
+        className={`fixed duration-300 top-0 flex justify-center items-center w-full  z-[9999999999999999] backdrop-blur-md 
         ${
           !nav
             ? `${
@@ -57,7 +57,7 @@ const Header = () => {
         }
         `}
       >
-        <div className="flex justify-between items-center max-w-[1440px] w-full px-[1rem]">
+        <div className="flex justify-between items-center max-w-[90rem] w-full px-[1rem]">
           <div className="flex flex-row justify-center items-center gap-8 ">
             <Logo className="w-[6rem]" />
             {navigations.map((data, index) => {
@@ -80,28 +80,12 @@ const Header = () => {
 
           <div className="hidden lg:flex items-center justify-center gap-4">
             <Button
-              className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100  text-[#FAF9F5] rounded-full
-            hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
-            >
-              Login
-            </Button>
-            <Button
               className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100 bg-gradient-to-l from-[#3c29f7] to-[#ef2897] hover:from-[#ef2897] text-[#FAF9F5] rounded-full
             hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
             >
-              Sign up now
+              Open app
             </Button>
           </div>
-          {/* <div
-            className="w-full max-w-[20px] flex lg:hidden"
-            onClick={() => setNav(!nav)}
-          >
-            {!nav ? (
-              <MenuIcon className="text-[#FAF9F5] duration-300" />
-            ) : (
-              <XIcon className="text-[#FAF9F5] duration-300" />
-            )}
-          </div> */}
         </div>
       </div>
 
@@ -124,7 +108,7 @@ const Header = () => {
       </div>
 
       <div
-        className={`duration-300 backdrop-blur-sm ${
+        className={`duration-300 backdrop-blur-sm block lg:hidden ${
           !nav
             ? "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#0b1013] -z-[2] translate-x-full"
             : "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#0b1013] z-[999999999]"
@@ -151,16 +135,10 @@ const Header = () => {
           </div>
           <div className="flex flex-col items-center justify-center gap-4">
             <Button
-              className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100  text-[#FAF9F5] rounded-full
-            hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
-            >
-              Login
-            </Button>
-            <Button
               className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100 bg-gradient-to-l from-[#3c29f7] to-[#ef2897] hover:from-[#ef2897] text-[#FAF9F5] rounded-full
             hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
             >
-              Sign up now
+              Open app
             </Button>
           </div>
         </div>
