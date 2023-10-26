@@ -85,3 +85,27 @@ body {
 .swiper-pagination-bullet-active {
   background-color: #ea2899 !important;
 }
+
+.card {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  background-image: url(../public/assets/send-email/mendax-email-icon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s;
+  will-change: transform; */
+}
+
+@media screen and (min-width: 640px) {
+  .card {
+    width: 500px;
+    height: 500px;
+  }
+}
+/* 
+.card:hover {
+  box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+} */

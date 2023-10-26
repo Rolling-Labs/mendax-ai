@@ -34,7 +34,7 @@ const MendaxStudio = () => {
               className={"hidden md:block"}
             />
             <CardStudio
-              imgUrl={"/assets/mendax-studio/studio-1.png"}
+              imgUrl={"/assets/mendax-studio/studio-2.png"}
               title={"Game Asset"}
               description={
                 "Say goodbye to tedious asset creation! Our Game Asset feature generates stunning 3D models, eye-catching 2D images, immersive sound effects, and more. Elevate your game's visual and auditory appeal effortlessly with AI-generated assets."
@@ -42,7 +42,7 @@ const MendaxStudio = () => {
               className={"hidden md:block"}
             />
             <CardStudio
-              imgUrl={"/assets/mendax-studio/studio-1.png"}
+              imgUrl={"/assets/mendax-studio/studio-3.png"}
               title={"Game Environment"}
               description={
                 "Explore endless worlds with our Game Environment feature. It leverages procedural generation to craft diverse, immersive maps for your game. From lush forests to sprawling cities, let AI create the perfect backdrop for your gaming adventures."
@@ -50,7 +50,7 @@ const MendaxStudio = () => {
               className={"hidden md:block"}
             />
             <CardStudio
-              imgUrl={"/assets/mendax-studio/studio-1.png"}
+              imgUrl={"/assets/mendax-studio/studio-4.png"}
               title={"Game Logic"}
               description={
                 "Elevate your game's mechanics with our Game Logic module. AI generates intricate rule sets, gameplay mechanics, and interactive elements, allowing you to focus on gameplay rather than code. Transform your ideas into engaging gaming experiences effortlessly."

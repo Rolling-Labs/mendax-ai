@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import MendaxStudio from "@/components/MendaxStudio";
 import MendaxUniverse from "@/components/MendaxUniverse";
 import Partner from "@/components/Partner";
+import SendEmail from "@/components/SendEmail";
 import UnlockYourFullPotential from "@/components/UnlockYourFullPotential";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <DualTokenEconomy />
       <MendaxUniverse />
       <MendaxStudio />
+      <SendEmail />
       <Partner />
       <UnlockYourFullPotential />
     </>
