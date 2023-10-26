@@ -20,7 +20,7 @@ const SendEmail = () => {
   };
 
   return (
-    <div className="flex justify-center items-center bg-[url('/assets/bg/bg-email.png')] bg-cover bg-center py-16 lg:h-[68rem]">
+    <div className="flex justify-center items-center bg-[url('/assets/bg/bg-email.png')] bg-cover bg-center py-16">
       <div className="flex flex-col gap-4 sm:gap-8 items-center max-w-[608px] px-4 xl:px-0">
         <CardPuzzled />
 
