@@ -17,7 +17,7 @@ export default function Home() {
       <DualTokenEconomy />
       <MendaxUniverse />
       <MendaxStudio />
-      {/* <OurClientSays /> */}
+      <OurClientSays />
       <SendEmail />
       <Partner />
       <UnlockYourFullPotential />

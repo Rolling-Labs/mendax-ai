@@ -159,3 +159,13 @@ body {
 .text {
   flex: 0.5;
 }
+
+.faded-edges {
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 95%,
+    transparent 100%
+  );
+}
