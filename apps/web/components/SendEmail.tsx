@@ -6,6 +6,7 @@ import Input from "./Input";
 import TextArea from "./TextArea";
 import { useInView } from "react-intersection-observer";
 import { useUrl } from "@/lib/store";
+import CheckIcon from "@/public/icons/check-icon.svg";
 
 const SendEmail = () => {
   const [form, setForm] = useState({
@@ -157,12 +158,7 @@ const SendEmail = () => {
       {showModal && (
         <div className="fixed inset-0 h-full w-full flex justify-center items-center bg-cBlack-4 backdrop-blur-md z-[9999999999999999]">
           <div className="p-4 gap-6 flex flex-col w-full max-w-[26.25rem] w-f rounded-2xl items-center justify-center bg-cWhite-100">
-            <Image
-              src={"/icons/check-icon.svg"}
-              alt={"check"}
-              height={32}
-              width={32}
-            />
+            <CheckIcon />
 
             <div className="flex flex-col justify-center items-center gap-4">
               <h1 className="font-[satoshi] text-base font-bold text-cBlack-100 text-center">
