@@ -15,7 +15,6 @@ const MendaxStudio = () => {
   useEffect(() => {
     if (inView === true) {
       setUrl("/#create-section");
-      console.log(url);
     }
   }, [inView]);
 

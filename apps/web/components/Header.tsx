@@ -141,7 +141,7 @@ const Header = () => {
                   href={data.linkUrl}
                   className={`
                 ${
-                  pathname === data.linkUrl
+                  getUrl === data.linkUrl
                     ? "text-[#FAF9F5]"
                     : "text-[#FAF9F5]/50"
                 } font-[satoshi] text-base hover:text-[#FAF9F5] `}

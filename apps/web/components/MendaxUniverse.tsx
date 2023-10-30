@@ -13,7 +13,6 @@ const MendaxUniverse = () => {
   useEffect(() => {
     if (inView === true) {
       setUrl("/#play-section");
-      console.log(url);
     }
   }, [inView]);
 

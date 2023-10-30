@@ -16,7 +16,6 @@ const GameDevelopment = () => {
   useEffect(() => {
     if (inView === true) {
       setUrl("/#features-section");
-      console.log(url);
     }
   }, [inView]);
 

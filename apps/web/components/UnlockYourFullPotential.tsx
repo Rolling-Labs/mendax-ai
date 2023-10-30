@@ -5,7 +5,7 @@ import React from "react";
 const UnlockYourFullPotential = () => {
   return (
     <div className="flex justify-center items-center">
-      <div className="flex flex-col justify-center items-center py-16 sm:py-32 gap-4 sm:gap-8 max-w-[37.5rem]">
+      <div className="flex flex-col justify-center items-center py-16 sm:py-32 gap-4 sm:gap-8 max-w-[37.5rem] px-4 lg:px-0">
         <div className="flex flex-col justify-center items-center gap-2 sm:gap-4">
           <h1 className="font-[satoshi] text-cWhite-100 text-2xl sm:text-5xl font-bold text-center">
             Unlock Your Full Potential

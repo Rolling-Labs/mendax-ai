@@ -17,7 +17,6 @@ const HeroSection = () => {
   useEffect(() => {
     if (inView === true) {
       setUrl("/#home-section");
-      console.log(url);
     }
   }, [inView]);
   return (

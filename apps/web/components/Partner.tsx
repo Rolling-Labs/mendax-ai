@@ -50,7 +50,6 @@ const Partner = () => {
   useEffect(() => {
     if (inView === true) {
       setUrl("/#partners-section");
-      console.log(url);
     }
   }, [inView]);
   return (

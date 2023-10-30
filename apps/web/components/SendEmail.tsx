@@ -67,7 +67,6 @@ const SendEmail = () => {
   useEffect(() => {
     if (inView === true) {
       setUrl("/#contact-section");
-      console.log(url);
     }
   }, [inView]);
 

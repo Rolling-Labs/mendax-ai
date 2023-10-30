@@ -14,7 +14,6 @@ const DualTokenEconomy = () => {
   useEffect(() => {
     if (inView === true) {
       setUrl("/#tokenomics-section");
-      console.log(url);
     }
   }, [inView]);
 
