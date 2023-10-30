@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React from "react";
+import { useUrl } from "@/lib/store";
+import React, { useEffect } from "react";
 import Marquee from "react-fast-marquee";
+import { useInView } from "react-intersection-observer";
 
 const marqueeComponent = [
   {
@@ -28,8 +30,23 @@ const marqueeComponent = [
 ];
 
 const OurClientSays = () => {
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  const { setUrl } = useUrl((state) => state);
+
+  useEffect(() => {
+    if (inView === true) {
+      setUrl("/#testimonials-section");
+    }
+  }, [inView]);
+
   return (
-    <div className="flex justify-center items-center faded-edges">
+    <div
+      className="flex justify-center items-center faded-edges"
+      id="testimonials-section"
+    >
       <div className="relative flex flex-col justify-center items-center max-w-[90rem] grow gap-16  h-[60rem]">
         <img
           src={"/assets/client/divider.png"}
@@ -46,7 +63,10 @@ const OurClientSays = () => {
           className="w-full absolute bottom-[0] left-1/2 transform -translate-x-1/2 -translate-y-[0]"
         />
 
-        <h1 className="font-[satoshi] text-white font-bold text-2xl sm:text-5xl">
+        <h1
+          className="font-[satoshi] text-white font-bold text-2xl sm:text-5xl"
+          ref={ref}
+        >
           Our client says
         </h1>
 
