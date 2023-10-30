@@ -1,15 +1,37 @@
-import React from "react";
+"use client";
+import { useUrl } from "@/lib/store";
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const MendaxUniverse = () => {
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  const { url, setUrl } = useUrl((state) => state);
+
+  useEffect(() => {
+    if (inView === true) {
+      setUrl("/#play-section");
+      console.log(url);
+    }
+  }, [inView]);
+
   return (
-    <div className="flex justify-center items-center bg-[url('/assets/bg/bg-mendax.png')] bg-cover bg-center h-[45rem] lg:h-[58rem]">
+    <div
+      id="play-section"
+      className="flex justify-center items-center bg-[url('/assets/bg/bg-mendax.png')] bg-cover bg-center h-[45rem] lg:h-[58rem]"
+    >
       <div className="flex flex-col grow max-w-[90rem] px-4 xl:px-0">
         <div className="flex flex-col gap-8 sm:gap-16 grow sm:max-w-[40rem]">
           <div className="flex flex-col gap-2 sm:gap-4">
             <h1 className="font-[satoshi] font-bold text-3xl sm:text-5xl text-[#FAF9F5]">
               Play in the Mendax Universe
             </h1>
-            <h1 className="font-[satoshi] font-bold text-2xl sm:text-4xl text-[#FAF9F5]/80">
+            <h1
+              className="font-[satoshi] font-bold text-2xl sm:text-4xl text-[#FAF9F5]/80"
+              ref={ref}
+            >
               Where gaming transcends boundaries
             </h1>
           </div>

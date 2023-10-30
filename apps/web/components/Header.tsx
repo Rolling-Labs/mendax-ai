@@ -5,33 +5,50 @@ import Logo from "public/icons/logo.svg";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import { Button } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
+import { useUrl } from "@/lib/store";
 
 const navigations = [
   {
     name: "Home",
-    linkUrl: "/",
+    linkUrl: "/#home-section",
   },
   {
-    name: "Games",
-    linkUrl: "/#games",
+    name: "Features",
+    linkUrl: "/#features-section",
   },
   {
-    name: "Marketplace",
-    linkUrl: "/#marketplace",
+    name: "Tokenomics",
+    linkUrl: "/#tokenomics-section",
   },
   {
-    name: "Studio",
-    linkUrl: "/#studio",
+    name: "Play",
+    linkUrl: "/#play-section",
   },
   {
-    name: "About",
-    linkUrl: "/#about",
+    name: "Create",
+    linkUrl: "/#create-section",
+  },
+  {
+    name: "Testimonials",
+    linkUrl: "/#testimonials-section",
+  },
+
+  {
+    name: "Contact",
+    linkUrl: "/#contact-section",
+  },
+  {
+    name: "Partners",
+    linkUrl: "/#partners-section",
   },
 ];
 
 const Header = () => {
   const pathname = usePathname();
   const [nav, setNav] = useState(false);
+  const { url: getUrl, setUrl } = useUrl((state) => state);
+
+  // const [getUrl, setUrl] = useState("#home-section");
   const hide = "hidden";
   const show = "auto";
   const scrollPosition = useScrollPosition();
@@ -65,12 +82,13 @@ const Header = () => {
                 <a
                   key={index}
                   href={data.linkUrl}
+                  onClick={() => setUrl(data.linkUrl)}
                   className={`
                 ${
-                  pathname === data.linkUrl
+                  getUrl === data.linkUrl
                     ? "text-[#FAF9F5]"
                     : "text-[#FAF9F5]/50"
-                } font-[satoshi] text-base hover:text-[#FAF9F5] hidden lg:flex`}
+                } font-[satoshi] text-base hover:text-[#FAF9F5] hidden lg:flex duration-300`}
                 >
                   {data.name}
                 </a>

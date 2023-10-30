@@ -1,14 +1,32 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Separator from "public/assets/hero/separator.svg";
 import HeroCharacter from "public/assets/hero/hero-character.svg";
 import { Button } from "@nextui-org/react";
+import { useInView } from "react-intersection-observer";
+import { useUrl } from "@/lib/store";
 
 const HeroSection = () => {
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  const { url, setUrl } = useUrl((state) => state);
+
+  useEffect(() => {
+    if (inView === true) {
+      setUrl("/#home-section");
+      console.log(url);
+    }
+  }, [inView]);
   return (
     // h-[600px] md:h-[900px] lg:h-[1200px] 2xl:h-[1500px]
-    <div className="relative flex justify-center items-center h-[600px] md:h-[900px] lg:h-[1200px] 2xl:h-[1200px] pt-[8rem]">
+    <div
+      id="home-section"
+      className="relative flex justify-center items-center h-[600px] md:h-[900px] lg:h-[1200px] 2xl:h-[1200px] pt-[8rem]"
+      ref={ref}
+    >
       <Separator className="absolute bottom-0 z-[2] max-w-[1500px]" />
       <Image
         src={"/assets/hero/shadow.png"}

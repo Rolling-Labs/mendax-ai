@@ -1,3 +1,4 @@
+import { type } from "os";
 import React from "react";
 
 interface InputProps {
@@ -9,7 +10,7 @@ interface InputProps {
   disabled?: boolean;
   required?: boolean;
   className?: string;
-  isError: boolean;
+  type: any;
 }
 
 const Input = ({
@@ -20,12 +21,13 @@ const Input = ({
   disabled,
   className,
   required = true,
-  isError,
+  type,
 }: InputProps) => {
   return (
     <div className="flex flex-col items-start justify-center w-full max-w-[420px]">
       <input
         name={id}
+        type={type}
         className={`${className} p-4 rounded-lg border border-cWhite-32 bg-cWhite-4 backdrop-blur placeholder-cWhite-32 text-cWhite-100 font-medium w-full text-base outline-none`}
         placeholder={placeholder}
         onChange={onChange}

@@ -36,6 +36,7 @@ const TextArea = ({
         onBlur={onBlur}
         autoComplete="off"
         autoFocus={autoFocus}
+        required
       />
       {/* {isError && (
         <p className="pt-2 px-4 text-[#F9154B] font-[roboto] font-light">

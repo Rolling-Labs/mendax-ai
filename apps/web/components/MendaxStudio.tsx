@@ -1,10 +1,29 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import CardStudio from "./CardStudio";
+import { useInView } from "react-intersection-observer";
+import { useUrl } from "@/lib/store";
 
 const MendaxStudio = () => {
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  const { url, setUrl } = useUrl((state) => state);
+
+  useEffect(() => {
+    if (inView === true) {
+      setUrl("/#create-section");
+      console.log(url);
+    }
+  }, [inView]);
+
   return (
-    <div className="flex justify-center items-center bg-[url('/assets/bg/bg-game-dev.png')] bg-cover bg-center py-16 lg:h-[68rem]">
+    <div
+      id="create-section"
+      className="flex justify-center items-center bg-[url('/assets/bg/bg-game-dev.png')] bg-cover bg-center py-16 lg:h-[68rem]"
+    >
       <div className="flex flex-col sm:items-end gap-8 sm:gap-16 grow max-w-[75rem] px-4 xl:px-0">
         <div className="flex flex-col gap-4 sm:items-end">
           <h1 className="font-[satoshi] text-2xl sm:text-5xl font-bold text-cWhite-100">
@@ -15,7 +34,10 @@ const MendaxStudio = () => {
           </h1>
         </div>
 
-        <p className="text-left sm:text-right font-[satoshi] text-base text-cWhite-72 font-medium max-w-[848px]">
+        <p
+          className="text-left sm:text-right font-[satoshi] text-base text-cWhite-72 font-medium max-w-[848px]"
+          ref={ref}
+        >
           Unlock the creator within using Mendax&rsquo;s intuitive AI-driven
           toolkit. Design games, characters, and worlds effortlessly, sans the
           coding maze. Showcase your vision to a global audience, turning

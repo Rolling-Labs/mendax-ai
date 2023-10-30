@@ -1,9 +1,28 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import { useUrl } from "@/lib/store";
 
 const DualTokenEconomy = () => {
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  const { url, setUrl } = useUrl((state) => state);
+
+  useEffect(() => {
+    if (inView === true) {
+      setUrl("/#tokenomics-section");
+      console.log(url);
+    }
+  }, [inView]);
+
   return (
-    <div className="relative flex justify-center items-center h-[1000px]">
+    <div
+      className="relative flex justify-center items-center h-[1000px]"
+      id="tokenomics-section"
+    >
       <Image
         src={"/assets/dual-token-economy/right.png"}
         alt={"right"}
@@ -36,7 +55,9 @@ const DualTokenEconomy = () => {
           </span>
           <br></br>
           <br></br>
-          <span className="text-[#FAF9F5]">Mendax Points (MP) </span>
+          <span className="text-[#FAF9F5]" ref={ref}>
+            Mendax Points (MP){" "}
+          </span>
           <span className="text-[#FAF9F5]/50">
             are used to buy avatar Accessories and cosmetics such as Skins or
             other in-game complements.

@@ -1,16 +1,39 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import CardGame from "./CardGame";
+import { useInView } from "react-intersection-observer";
+
+import { useUrl } from "@/lib/store";
 
 const GameDevelopment = () => {
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  const { url, setUrl } = useUrl((state) => state);
+
+  useEffect(() => {
+    if (inView === true) {
+      setUrl("/#features-section");
+      console.log(url);
+    }
+  }, [inView]);
+
   return (
-    <div className="flex justify-center items-center bg-[url('/assets/bg/bg-game-dev.png')] bg-cover bg-center py-[5rem] lg:h-[58rem]">
+    <div
+      id="features-section"
+      className="flex justify-center items-center bg-[url('/assets/bg/bg-game-dev.png')] bg-cover bg-center py-[5rem] lg:h-[58rem]"
+    >
       <div className="flex flex-col gap-8 sm:gap-16 max-w-[90rem] grow px-4 xl:px-0">
         <h1 className="font-[satoshi] text-2xl sm:text-5xl text-center font-bold text-white leading-[2rem] sm:leading-[4rem]">
           Unleash Your Creativity with <br /> AI-Powered Game Development
         </h1>
 
-        <div className="flex flex-wrap grow gap-4 items-center justify-center">
+        <div
+          className="flex flex-wrap grow gap-4 items-center justify-center"
+          ref={ref}
+        >
           <CardGame
             imgUrl={"/icons/game-development/icon-1.png"}
             description={
