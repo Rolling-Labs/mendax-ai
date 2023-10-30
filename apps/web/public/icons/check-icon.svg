@@ -1,0 +1,41 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="https://app.lottiefiles.com/animation/5347630b-3c93-4990-a8bf-0f71410a3c4b" clip-path="url(#clip0_424_34)">
+<g id="Clip path group">
+<mask id="mask0_424_34" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+<g id="__lottie_element_951">
+<path id="Vector" d="M32 0H0V32H32V0Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_424_34)">
+<g id="Group">
+<g id="Group_2">
+<g id="Group_3">
+<path id="Vector_2" d="M33.25 -1V33.75H-1.375V-1H33.25Z" fill="#FAF9F5"/>
+</g>
+</g>
+<g id="Group_4" opacity="0.583578">
+<g id="Group_5">
+<path id="Vector_3" d="M16.0001 1.75537C23.7292 1.75537 30.0048 8.03088 30.0048 15.7601C30.0048 23.4893 23.7292 29.7648 16.0001 29.7648C8.27087 29.7648 1.99536 23.4893 1.99536 15.7601C1.99536 8.03088 8.27087 1.75537 16.0001 1.75537Z" fill="#C7F1E0"/>
+<path id="Vector_4" d="M16.0001 1.75537C23.7293 1.75537 30.0048 8.03088 30.0048 15.7601C30.0048 23.4893 23.7293 29.7648 16.0001 29.7648C8.27087 29.7648 1.99536 23.4893 1.99536 15.7601C1.99536 8.03088 8.27087 1.75537 16.0001 1.75537Z" stroke="white" stroke-width="0.237368"/>
+</g>
+</g>
+<g id="Group_6">
+<g id="Group_7">
+<path id="Vector_5" d="M16 4.77246C22.1054 4.77246 27.0625 9.72957 27.0625 15.835C27.0625 21.9404 22.1054 26.8975 16 26.8975C9.89461 26.8975 4.9375 21.9404 4.9375 15.835C4.9375 9.72957 9.89461 4.77246 16 4.77246Z" fill="#2CDA94"/>
+</g>
+</g>
+<g id="Group_8">
+<g id="Group_9">
+<path id="Vector_6" d="M10.8438 16.2812L14.0625 19.4375L20.5625 12.7188" stroke="white" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_424_34">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>
