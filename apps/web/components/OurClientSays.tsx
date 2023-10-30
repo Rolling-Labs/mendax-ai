@@ -34,14 +34,14 @@ const OurClientSays = () => {
         <img
           src={"/assets/client/divider.png"}
           alt={"divider"}
-          width={800}
+          width={100}
           height={50}
           className="w-full absolute top-[0] left-1/2 transform -translate-x-1/2 -translate-y-[0]"
         />
         <img
           src={"/assets/client/divider.png"}
           alt={"divider"}
-          width={800}
+          width={100}
           height={50}
           className="w-full absolute bottom-[0] left-1/2 transform -translate-x-1/2 -translate-y-[0]"
         />
@@ -54,19 +54,19 @@ const OurClientSays = () => {
           gradient
           gradientColor="#0b1013, #0b1013"
           pauseOnHover
-          gradientWidth={500}
+          // gradientWidth={500}
           speed={100}
           className="w-full my-4"
         >
-          <div className="flex justify-center items-start gap-4 overflow-y-hidden w-full">
+          <div className="flex justify-center items-start gap-4 overflow-x-hidden w-full">
             {marqueeComponent.map((item, index) => {
               return (
                 <>
                   <div
-                    className="flex flex-col gap-6 w-full max-w-[300px] sm:max-w-[538px] mx-[1rem] duration-150 scale-90 hover:scale-100"
+                    className="flex flex-col gap-6 w-full max-w-[250px] xsm:max-w-[300px] sm:max-w-[538px] mx-[0.5rem] sm:mx-[1rem] duration-150 scale-80 sm:hover:scale-100"
                     key={index}
                   >
-                    <h1 className="text-cWhite-100 font-[satoshi] font-bold italic text-[27px] leading-[2.3rem]">
+                    <h1 className="text-cWhite-100 font-[satoshi] font-bold italic text-lg sm:text-[27px] leading-[1.3rem] sm:leading-[2.3rem]">
                       {item.description}
                     </h1>
 
