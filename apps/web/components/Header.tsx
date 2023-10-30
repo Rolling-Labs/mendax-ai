@@ -5,33 +5,50 @@ import Logo from "public/icons/logo.svg";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import { Button } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
+import { useUrl } from "@/lib/store";
 
 const navigations = [
   {
     name: "Home",
-    linkUrl: "/",
+    linkUrl: "/#home-section",
   },
   {
-    name: "Games",
-    linkUrl: "/#games",
+    name: "Features",
+    linkUrl: "/#features-section",
   },
   {
-    name: "Marketplace",
-    linkUrl: "/#marketplace",
+    name: "Tokenomics",
+    linkUrl: "/#tokenomics-section",
   },
   {
-    name: "Studio",
-    linkUrl: "/#studio",
+    name: "Play",
+    linkUrl: "/#play-section",
   },
   {
-    name: "About",
-    linkUrl: "/#about",
+    name: "Create",
+    linkUrl: "/#create-section",
+  },
+  {
+    name: "Testimonials",
+    linkUrl: "/#testimonials-section",
+  },
+
+  {
+    name: "Contact",
+    linkUrl: "/#contact-section",
+  },
+  {
+    name: "Partners",
+    linkUrl: "/#partners-section",
   },
 ];
 
 const Header = () => {
   const pathname = usePathname();
   const [nav, setNav] = useState(false);
+  const { url: getUrl, setUrl } = useUrl((state) => state);
+
+  // const [getUrl, setUrl] = useState("#home-section");
   const hide = "hidden";
   const show = "auto";
   const scrollPosition = useScrollPosition();
@@ -45,7 +62,7 @@ const Header = () => {
   return (
     <>
       <div
-        className={`fixed duration-300 top-0 flex justify-center items-center w-full  z-[9999999999999999]  backdrop-blur-md 
+        className={`fixed duration-300 top-0 flex justify-center items-center w-full  z-[9999999999999999] backdrop-blur-md 
         ${
           !nav
             ? `${
@@ -57,7 +74,7 @@ const Header = () => {
         }
         `}
       >
-        <div className="flex justify-between items-center max-w-[1440px] w-full px-[1rem]">
+        <div className="flex justify-between items-center max-w-[90rem] w-full px-[1rem]">
           <div className="flex flex-row justify-center items-center gap-8 ">
             <Logo className="w-[6rem]" />
             {navigations.map((data, index) => {
@@ -65,12 +82,13 @@ const Header = () => {
                 <a
                   key={index}
                   href={data.linkUrl}
+                  onClick={() => setUrl(data.linkUrl)}
                   className={`
                 ${
-                  pathname === data.linkUrl
+                  getUrl === data.linkUrl
                     ? "text-[#FAF9F5]"
                     : "text-[#FAF9F5]/50"
-                } font-[satoshi] text-base hover:text-[#FAF9F5] hidden lg:flex`}
+                } font-[satoshi] text-base hover:text-[#FAF9F5] hidden lg:flex duration-300`}
                 >
                   {data.name}
                 </a>
@@ -80,28 +98,12 @@ const Header = () => {
 
           <div className="hidden lg:flex items-center justify-center gap-4">
             <Button
-              className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100  text-[#FAF9F5] rounded-full
-            hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
-            >
-              Login
-            </Button>
-            <Button
               className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100 bg-gradient-to-l from-[#3c29f7] to-[#ef2897] hover:from-[#ef2897] text-[#FAF9F5] rounded-full
             hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
             >
-              Sign up now
+              Open app
             </Button>
           </div>
-          {/* <div
-            className="w-full max-w-[20px] flex lg:hidden"
-            onClick={() => setNav(!nav)}
-          >
-            {!nav ? (
-              <MenuIcon className="text-[#FAF9F5] duration-300" />
-            ) : (
-              <XIcon className="text-[#FAF9F5] duration-300" />
-            )}
-          </div> */}
         </div>
       </div>
 
@@ -124,7 +126,7 @@ const Header = () => {
       </div>
 
       <div
-        className={`duration-300 backdrop-blur-sm ${
+        className={`duration-300 backdrop-blur-sm block lg:hidden ${
           !nav
             ? "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#0b1013] -z-[2] translate-x-full"
             : "fixed inset-0 h-screen w-screen flex flex-col justify-center items-center bg-[#0b1013] z-[999999999]"
@@ -139,7 +141,7 @@ const Header = () => {
                   href={data.linkUrl}
                   className={`
                 ${
-                  pathname === data.linkUrl
+                  getUrl === data.linkUrl
                     ? "text-[#FAF9F5]"
                     : "text-[#FAF9F5]/50"
                 } font-[satoshi] text-base hover:text-[#FAF9F5] `}
@@ -151,16 +153,10 @@ const Header = () => {
           </div>
           <div className="flex flex-col items-center justify-center gap-4">
             <Button
-              className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100  text-[#FAF9F5] rounded-full
-            hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
-            >
-              Login
-            </Button>
-            <Button
               className={`font-[satoshi] duration-300 font-bold text-xs md:text-base py-4 px-8 text-[#FAF9F5]-100 bg-gradient-to-l from-[#3c29f7] to-[#ef2897] hover:from-[#ef2897] text-[#FAF9F5] rounded-full
             hover:to-[#3c29f7] hover:scale-105 focus:outline-none uppercase`}
             >
-              Sign up now
+              Open app
             </Button>
           </div>
         </div>
