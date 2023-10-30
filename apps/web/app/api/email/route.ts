@@ -3,7 +3,7 @@ import { Resend } from "resend";
 import WelcomeEmail from "@/emails/SendEmail";
 require("dotenv").config();
 
-const resend = new Resend("re_Wve4y92E_9mv4mG4X2R77ZErKHKVipeno");
+const resend = new Resend(process.env.APIKEY);
 
 export async function POST(request: Request) {
   const { email, companyName, idea } = await request.json();
