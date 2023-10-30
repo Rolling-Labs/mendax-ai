@@ -11,7 +11,7 @@ export async function POST(request: Request) {
   try {
     await resend.sendEmail({
       from: "noreply@mendax.ai",
-      to: "joaquin@mendax.ai",
+      to: "hvstle.dev@gmail.com",
       subject: "Are you a Game Studio?",
       react: WelcomeEmail({ email, companyName, idea }),
     });
